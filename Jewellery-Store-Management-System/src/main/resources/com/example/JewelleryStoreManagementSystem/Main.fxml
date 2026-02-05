@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="721.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.JewelleryStoreManagementSystem.Controllers.MainController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="700.0">
+         <children>
+            <Label prefHeight="21.0" prefWidth="142.0" text="Overall Stock Value:" underline="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="totalValueLabel" prefHeight="21.0" prefWidth="75.0" text="€0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="60.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalValueLabel1" prefHeight="21.0" prefWidth="109.0" text="Jewellery Store">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="save" mnemonicParsing="false" onAction="#saveAllData" prefHeight="25.0" prefWidth="50.0" text="Save">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="100.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="load" mnemonicParsing="false" onAction="#loadAllData" prefHeight="25.0" prefWidth="50.0" text="Load">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="clear" mnemonicParsing="false" onAction="#clearAllData" prefHeight="25.0" prefWidth="50.0" text="Clear">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <BorderPane layoutY="34.0" prefHeight="688.0" prefWidth="700.0">
+         <center>
+            <TabPane prefHeight="700.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab fx:id="cases" text="Cases">
+                  <content>
+                    <AnchorPane maxHeight="800.0" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="700.0">
+                           <children>
+                              <fx:include source="DisplayCase.fxml" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Trays">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <fx:include source="DisplayTray.fxml" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Jewellery">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="596.0">
+                           <children>
+                              <fx:include source="Jewellery.fxml" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Materials">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="791.0" prefWidth="700.0">
+                           <children>
+                              <fx:include source="Material.fxml" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Display View">
+                     <content>
+                        <AnchorPane maxHeight="800.0" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="700.0">
+                           <children>
+                              <fx:include source="interactiveDisplay.fxml" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Search">
+                     <content>
+                        <AnchorPane maxHeight="800.0" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="700.0">
+                           <children>
+                              <fx:include source="Search.fxml" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Display All">
+                     <content>
+                        <AnchorPane maxHeight="800.0" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="700.0">
+                           <children>
+                              <fx:include source="displayAll.fxml" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

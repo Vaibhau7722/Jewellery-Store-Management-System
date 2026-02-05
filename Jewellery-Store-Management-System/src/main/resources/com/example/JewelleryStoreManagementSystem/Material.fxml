@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.JewelleryStoreManagementSystem.Controllers.MaterialController">
+   <top>
+      <Label text="Material" underline="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="519.0" prefWidth="394.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="45.0" prefWidth="400.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="250.0">
+                     <children>
+                        <Label text="Display Case Selection" />
+                        <ChoiceBox fx:id="caseChoiceBox" onAction="#selectedCase" prefHeight="25.0" prefWidth="250.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="250.0">
+                     <children>
+                        <Label text="Display Tray Selection" />
+                        <ChoiceBox fx:id="trayChoiceBox" onAction="#selectedTray" prefHeight="25.0" prefWidth="250.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox alignment="TOP_CENTER" prefHeight="44.0" prefWidth="400.0">
+               <children>
+                  <Label text="Jewellery Item Selection">
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="jewelleryItemChoiceBox" onAction="#selectedJewelleryItem" prefHeight="25.0" prefWidth="350.0" />
+               </children>
+            </VBox>
+            <Label text="Material Information">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="materialType" alignment="TOP_CENTER" promptText="Type (e.g. gold, platinum, etc.)" />
+            <HBox prefHeight="25.0" prefWidth="400.0">
+               <children>
+                  <TextField fx:id="materialWeight" alignment="TOP_CENTER" prefHeight="25.0" prefWidth="252.0" promptText="Weight" />
+                  <TextField fx:id="materialQuality" alignment="TOP_CENTER" prefHeight="25.0" prefWidth="252.0" promptText="Quality" />
+               </children>
+            </HBox>
+            <TextArea fx:id="materialDescription" prefHeight="38.0" prefWidth="500.0" promptText="Material Description" />
+            <Button fx:id="addMaterial" mnemonicParsing="false" onAction="#addMaterial" text="Add Material">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Label text="Materials Involved">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+            <ListView fx:id="materialListView" prefHeight="302.0" prefWidth="500.0" />
+            <Button fx:id="deleteSelectedMaterial" mnemonicParsing="false" onAction="#deleteMaterialItem" text="Delete Selected Material">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="deleteAllMaterials" mnemonicParsing="false" onAction="#deleteAllMaterials" text="Delete All Materials">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="uniqueID" alignment="TOP_CENTER" maxHeight="1.0" prefHeight="1.0" prefWidth="500.0" promptText="Material ID (unique number)" visible="false" />
+         </children></VBox>
+   </right>
+</BorderPane>

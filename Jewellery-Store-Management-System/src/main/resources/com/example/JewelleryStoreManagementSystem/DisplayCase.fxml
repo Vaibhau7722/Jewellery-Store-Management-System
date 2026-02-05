@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane accessibleRole="TEXT_FIELD" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.JewelleryStoreManagementSystem.Controllers.CaseController">
+   <top>
+      <Label text="Display Cases" underline="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="470.0" prefWidth="400.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label text="Display Case Information">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <TextField fx:id="caseID" alignment="CENTER" prefHeight="27.0" prefWidth="317.0" promptText="Display Case ID" />
+            <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="500.0">
+               <children>
+                  <CheckBox fx:id="type" mnemonicParsing="false" onAction="#wallmountedIsSelected" text="Wallmounted?">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="lighting" mnemonicParsing="false" onAction="#isBacklitSelected" text="Backlit?" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Button id="Case Button" fx:id="addCase" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addDisplayCase" text="Add Display Case" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="400.0">
+               <children>
+                  <Label text="Current Display Cases">
+                     <padding>
+                        <Insets right="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <ListView fx:id="caseListView" prefHeight="416.0" prefWidth="500.0" />
+            <Button id="Delete Case Button" fx:id="deleteCase" mnemonicParsing="false" onAction="#deleteSelectedCase" prefHeight="25.0" prefWidth="171.0" text="Delete Selected Display Case">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin></Button>
+            <Button fx:id="deleteAllCases" mnemonicParsing="false" onAction="#deleteAllCases" text="Delete All Display Cases">
+               <VBox.margin> </VBox.margin>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
